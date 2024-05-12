@@ -1,4 +1,7 @@
 import ListGroup from './components/ListGroup';
+import Alert from './components/Alert';
+import Button from './components/Button';
+import { useState } from 'react';
 
 function App() {
   const cities = [
@@ -14,8 +17,18 @@ function App() {
     console.log(item);
   };
 
+  const [showAlert, setShowAlert] = useState(false);
   return (
     <div>
+      {showAlert && (
+        <Alert onClose={() => setShowAlert(false)}>
+          Hello <span> World! </span>
+        </Alert>
+      )}
+
+      <Button cssClass="danger" onClick={() => setShowAlert(true)}>
+        Test button
+      </Button>
       <ListGroup
         items={cities}
         heading="Cities"
