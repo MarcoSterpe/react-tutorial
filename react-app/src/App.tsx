@@ -2,6 +2,9 @@ import ListGroup from './components/ListGroup';
 import Alert from './components/Alert';
 import Button from './components/Button';
 import { useState } from 'react';
+import Form from './components/Form';
+import FormState from './components/FormState';
+import FormHook from './components/FormHook';
 
 function App() {
   const cities = [
@@ -34,6 +37,9 @@ function App() {
         heading="Cities"
         onSelectItem={handleSelectItem}
       />
+      <Form />
+      <FormState />
+      <FormHook />
     </div>
   );
 }
